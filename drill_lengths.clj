@@ -49,12 +49,14 @@
     (for [all (range distinct-drill-diameters)] ((drill-entries all) 2)))
 
 (def sum-of-drill-drawer-widths
-    ""
+    "the sum of distinct drawer widths"
     (reduce + drill-drawer-widths))
 
 (def fucking-hell
+    "the entire reason i wrote this entire source file
+        that is to get a geometric area scalar for use in determining suitability of drawers for drill storage"
     (reduce +
-        (for [index (range 15)] 
+        (for [index (range distinct-drill-diameters)] 
             (* 
                 ((drill-entries index) 1)
                 ((drill-entries index) 2)))))
